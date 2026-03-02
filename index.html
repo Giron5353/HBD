@@ -1,28 +1,36 @@
 <!DOCTYPE html>
-<html lang="es" >
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title> Feliz Cumpleaños</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Cumpleaños</title>
   <link rel="stylesheet" href="./style.css">
-
 </head>
 <body>
 
 <div class="card">
-		<div class="imgBox">
-			<div class="bark"></div>
-			<img src="https://image.ibb.co/fYzTrb/lastofus.jpg">
-		</div>
-		<div class="details">
-			<h4 class="color3">FELIZ CUMPLEAÑOS MA!</h4>
-			<!--h4 class="color2 margin"></h3> -->
-			<p></p>Hoy celebro la vida de la mujer más fuerte, amorosa y valiente que conozco. Gracias por cada sacrificio silencioso, por cada consejo lleno de sabiduría y por cada abrazo que me ha dado paz en los momentos difíciles.
-            Le pido a Dios que te regale muchos años más de vida, llenos de salud, tranquilidad y sueños cumplidos. Que así como tú has iluminado mi camino, la vida te devuelva todo ese amor multiplicado.
-            Te amo infinitamente, mamá. Gracias por nunca soltarme la mano. 💖
-			<p class="text-right">¡te adoro con todo el corazon!</p>
-        
-		</div>
-	</div>
+  <div class="imgBox">
+    <div class="bark"></div>
+    <img src="https://image.ibb.co/fYzTrb/lastofus.jpg">
+  </div>
+  <div class="details">
+    <h4 class="color3">FELIZ CUMPLEAÑOS MA!</h4>
+    <p></p>Hoy celebro la vida de la mujer más fuerte, amorosa y valiente que conozco. Gracias por cada sacrificio silencioso, por cada consejo lleno de sabiduría y por cada abrazo que me ha dado paz en los momentos difíciles.
+    Le pido a Dios que te regale muchos años más de vida, llenos de salud, tranquilidad y sueños cumplidos. Que así como tú has iluminado mi camino, la vida te devuelva todo ese amor multiplicado.
+    Te amo infinitamente, mamá. Gracias por nunca soltarme la mano. 💖
+    <p class="text-right">¡te adoro con todo el corazon!</p>
+  </div>
+</div>
+
+<script>
+  // Solo activar el tap en móvil
+  if (window.innerWidth <= 600) {
+    const card = document.querySelector('.card');
+    card.addEventListener('click', () => {
+      card.classList.toggle('open');
+    });
+  }
+</script>
 
 </body>
 </html>
