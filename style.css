@@ -142,7 +142,7 @@ h4 {
 	}
 
 	.card:hover {
-		transform: rotate(15deg) scale(1.05);
+		transform: none;
 	}
 
 	.card .imgBox img {
@@ -181,12 +181,24 @@ h4 {
 		box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
 	}
 
-	.hint {
+}
+
+.toggle-btn {
+	display: none;
+}
+
+@media (max-width: 600px) {
+	.toggle-btn {
+		display: block;
+		margin: 16px auto 0;
 		font-family: 'Indie Flower', cursive;
-		color: #7a5230;
-		font-size: 14px;
-		text-align: center;
-		margin-top: 8px;
-		opacity: 0.8;
+		font-size: 16px;
+		background: #e0e1dc;
+		color: #013243;
+		border: 2px solid #92A29C;
+		border-radius: 20px;
+		padding: 8px 24px;
+		cursor: pointer;
+		box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
 	}
 }

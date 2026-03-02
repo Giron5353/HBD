@@ -22,7 +22,25 @@
   </div>
 </div>
 
+<!-- Audio feliz cumpleaños -->
+<audio id="bgMusic" src="./cumple.mpeg" loop preload="auto"></audio>
+
 <script>
+  const music = document.getElementById('bgMusic');
+
+  function playMusic() {
+    music.play().catch(() => {});
+  }
+
+  // Intentar autoplay al cargar
+  window.addEventListener('load', () => {
+    music.play().catch(() => {
+      // Si el navegador bloquea, reproducir al primer toque del usuario
+      document.addEventListener('touchstart', playMusic, { once: true });
+      document.addEventListener('click', playMusic, { once: true });
+    });
+  });
+
   // Solo activar el tap en móvil
   if (window.innerWidth <= 600) {
     const card = document.querySelector('.card');
