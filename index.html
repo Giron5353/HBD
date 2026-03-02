@@ -22,39 +22,30 @@
   </div>
 </div>
 
-<button id="toggleBtn" class="toggle-btn">Abrir tarjeta 💌</button>
-
+<!-- Audio feliz cumpleaños -->
 <audio id="bgMusic" src="./cumple.mpeg" loop preload="auto"></audio>
 
 <script>
   const music = document.getElementById('bgMusic');
-  let musicStarted = false;
 
-  function startMusic() {
-    if (!musicStarted) {
-      music.play().catch(() => {});
-      musicStarted = true;
-    }
+  function playMusic() {
+    music.play().catch(() => {});
   }
 
   // Intentar autoplay al cargar
   window.addEventListener('load', () => {
-    music.play().then(() => {
-      musicStarted = true;
-    }).catch(() => {
-      // En móvil esperar interacción, pero el botón ya llama startMusic()
-      document.addEventListener('touchstart', startMusic, { once: true });
+    music.play().catch(() => {
+      // Si el navegador bloquea, reproducir al primer toque del usuario
+      document.addEventListener('touchstart', playMusic, { once: true });
+      document.addEventListener('click', playMusic, { once: true });
     });
   });
 
+  // Solo activar el tap en móvil
   if (window.innerWidth <= 600) {
     const card = document.querySelector('.card');
-    const btn = document.getElementById('toggleBtn');
-
-    btn.addEventListener('click', () => {
-      startMusic();
-      const isOpen = card.classList.toggle('open');
-      btn.textContent = isOpen ? 'Cerrar tarjeta 💌' : 'Abrir tarjeta 💌';
+    card.addEventListener('click', () => {
+      card.classList.toggle('open');
     });
   }
 </script>
